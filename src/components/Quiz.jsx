@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useCallback } from "react";
 import QUESTIONS from "../question";
 import Question from "./Question";
+import Summary from "./Summary";
 const Quiz = () => {
   const [answerState, setAnswerState] = useState("");
   const [answers, setAnswers] = useState([]);
@@ -32,17 +33,7 @@ const Quiz = () => {
 
   if (quizCompleted) {
     return (
-      <div id="summary">
-        <img src="/src/assets/quiz-complete.png" alt="" />
-        <h2>Quiz Completed</h2>
-        {/* <ul>
-          {QUESTIONS.map((question, index) => (
-            <li key={question.id}>
-              {question.text} - {answers[index]}
-            </li>
-          ))}
-        </ul> */}
-      </div>
+      <Summary  userAnswers={answers}/>
     );
   }
 
