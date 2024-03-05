@@ -50,11 +50,8 @@ const Quiz = () => {
     <div id="quiz">
       <Question
       key={activeQuestionIndex}
-        questionText={QUESTIONS[activeQuestionIndex].text}
-        answers={QUESTIONS[activeQuestionIndex].answers}
         onSelectAnswer={handleSelectAnswer}
-        answerState={answerState}
-        selectedAnswer={answers[answers.length - 1]}
+        activeQuestionIndex={activeQuestionIndex}
         onSkipAnswer={handleSkipAnswer}
       />
     </div>
